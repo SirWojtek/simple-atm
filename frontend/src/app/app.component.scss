@@ -1,0 +1,10 @@
+.app-container {
+  display: flex;
+  justify-content: center;
+
+  .app-card {
+    margin-top: 64px;
+    min-width: 24rem;
+    min-height: 30rem;
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "name": "simple-atm",
+  "version": "1.0.0",
+  "description": "The project simulates withdrawal process",
+  "main": "index.js",
+  "author": "SirWojtek",
+  "license": "MIT"
+}

@@ -1,0 +1,8 @@
+{
+  "name": "simple-atm-backend",
+  "version": "1.0.0",
+  "description": "A backend for simple-atm project",
+  "main": "index.js",
+  "author": "SirWojtek",
+  "license": "MIT"
+}

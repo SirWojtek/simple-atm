@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { AtmService, IWithdrawResponse } from './atm.service';
 
 @Component({
   selector: 'app-atm',
@@ -9,7 +11,22 @@ import { FormBuilder, Validators } from '@angular/forms';
 export class AtmComponent {
   cashInputControl = this.formBuilder.control(null, Validators.required);
 
-  responses = [];
+  responses: IWithdrawResponse[] = [];
 
-  constructor(private formBuilder: FormBuilder) {}
+  constructor(
+    private formBuilder: FormBuilder,
+    private atmService: AtmService,
+    private snackbar: MatSnackBar
+  ) {}
+
+  onWithdrawClick() {
+    const amount: number = this.cashInputControl.value;
+
+    this.atmService
+      .withdrawCash(amount)
+      .subscribe(
+        response => this.responses.push(response),
+        err => this.snackbar.open(err)
+      );
+  }
 }

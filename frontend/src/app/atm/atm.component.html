@@ -1,2 +1,27 @@
 
-ATM COMPONENT
+<div class="atm-container">
+  <div class="input-container">
+
+    <mat-form-field class="cash-input">
+      <input
+        matInput
+        type="number"
+        placeholder="Cash amount"
+        [formControl]="cashInputControl"
+      >
+    </mat-form-field>
+
+    <button
+      mat-flat-button
+      color="primary"
+      [disabled]="!cashInputControl.valid"
+    >Withdraw</button>
+  </div>
+
+  <mat-card class="response-container">
+    <h5 *ngIf="!responses.length; else results" class="placeholder">Withdraw results will be shown here</h5>
+    <ng-template #results>
+      <span *ngFor="let res of responses">{{ res | json }}</span>
+    </ng-template>
+  </mat-card>
+</div>

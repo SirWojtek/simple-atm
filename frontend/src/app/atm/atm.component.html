@@ -22,7 +22,10 @@
   <mat-card class="response-container">
     <h5 *ngIf="!responses.length; else results" class="placeholder">Withdraw results will be shown here</h5>
     <ng-template #results>
-      <span *ngFor="let res of responses">{{ res | json }}</span>
+      <div class="response-row" *ngFor="let res of responses">
+        <span>Amount: {{ res.amount }}, notes: </span>
+        <app-notes [notes]="res.notes"></app-notes>
+      </div>
     </ng-template>
   </mat-card>
 </div>

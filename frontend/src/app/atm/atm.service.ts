@@ -6,7 +6,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 export interface IWithdrawResponse {
   amount: number;
-  bills: number[];
+  notes: number[];
 }
 
 @Injectable()

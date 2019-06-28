@@ -22,5 +22,12 @@
       margin-top: 16px;
       text-align: center;
     }
+
+    .response-row {
+      margin-bottom: 8px;
+      app-notes {
+        display: inline-block;
+      }
+    }
   }
 }

@@ -1,8 +1,18 @@
 {
+  "scripts": {
+    "prepare:backend": "cd backend && yarn",
+    "prepare:frontend": "cd frontend && yarn",
+    "prepare": "yarn prepare:backend && yarn prepare:frontend",
+    "start:backend": "cd backend && yarn start",
+    "start:frontend": "cd frontend && yarn start",
+    "start": "concurrently --kill-others \"yarn start:backend\" \"yarn start:frontend\""
+  },
   "name": "simple-atm",
   "version": "1.0.0",
   "description": "The project simulates withdrawal process",
-  "main": "index.js",
   "author": "SirWojtek",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^4.1.1"
+  }
 }

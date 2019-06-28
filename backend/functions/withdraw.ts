@@ -7,17 +7,20 @@ export interface WithdrawResponse {
   notes: number[];
 }
 
+export class NoteUnavailableException extends Error {}
+export class InvalidArgumentException extends Error {}
+
 const NOTES = [100, 50, 20, 10];
 
-export function withdraw(input: WithdrawInput): WithdrawResponse {
-  if (typeof input.amount !== 'number') {
-    throw Error('Amount is not a number');
-  }
-  if (!input.amount) {
+export function withdraw(input: WithdrawInput): WithdrawResponse | Error {
+  if (input.amount === null) {
     return {
       amount: input.amount,
       notes: [],
     };
+  }
+  if (typeof input.amount !== 'number' || input.amount < 0) {
+    return new InvalidArgumentException('Invalid amount value');
   }
 
   const notes = [];
@@ -30,7 +33,7 @@ export function withdraw(input: WithdrawInput): WithdrawResponse {
   }
 
   if (workingAmount) {
-    throw Error('Cannot withdraw this amount');
+    return new NoteUnavailableException('Cannot withdraw given amount');
   }
 
   return {

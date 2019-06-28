@@ -15,7 +15,8 @@
       mat-flat-button
       color="primary"
       [disabled]="!cashInputControl.valid"
-    >Withdraw</button>
+      (click)="onWithdrawClick()"
+    >WITHDRAW</button>
   </div>
 
   <mat-card class="response-container">

@@ -26,7 +26,7 @@ export class AtmComponent {
       .withdrawCash(amount)
       .subscribe(
         response => this.responses.push(response),
-        err => this.snackbar.open(err)
+        err => this.snackbar.open(err.error, 'DISMISS')
       );
   }
 }

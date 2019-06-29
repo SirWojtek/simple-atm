@@ -6,7 +6,9 @@
     "start:backend": "cd backend && yarn start",
     "start:frontend": "cd frontend && yarn start",
     "start": "concurrently --kill-others \"yarn start:backend\" \"yarn start:frontend\"",
-    "ut:frontend": "cd frontend && ng test --watch false"
+    "ut:frontend": "cd frontend && ng test --watch false",
+    "ut:backend": "cd backend && yarn test",
+    "ut": "yarn ut:frontend && yarn ut:backend"
   },
   "name": "simple-atm",
   "version": "1.0.0",

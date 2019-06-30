@@ -11,6 +11,10 @@ It contains:
 * frontend - a web application written in Angular 2 + Material
 * tests - both frontend and backend are utested, there are also bunch of e2e tests
 
+### Screenshot
+
+![](./images/atm.png)
+
 
 ### Backend
 

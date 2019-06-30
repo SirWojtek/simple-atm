@@ -5,6 +5,7 @@
     <mat-form-field class="cash-input">
       <input
         matInput
+        id="cash-input"
         type="number"
         placeholder="Cash amount"
         [formControl]="cashInputControl"
@@ -13,6 +14,7 @@
 
     <button
       mat-flat-button
+      id="withdraw-button"
       color="primary"
       [disabled]="!cashInputControl.valid"
       (click)="onWithdrawClick()"

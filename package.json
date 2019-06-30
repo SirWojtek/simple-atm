@@ -8,7 +8,10 @@
     "start": "concurrently --kill-others \"yarn start:backend\" \"yarn start:frontend\"",
     "ut:frontend": "cd frontend && ng test --watch false",
     "ut:backend": "cd backend && yarn test",
-    "ut": "yarn ut:frontend && yarn ut:backend"
+    "ut": "yarn ut:frontend && yarn ut:backend",
+    "e2e:run": "cd frontend && ng e2e",
+    "e2e": "./scripts/e2e-runner.sh",
+    "tests": "yarn ut && yarn e2e"
   },
   "name": "simple-atm",
   "version": "1.0.0",
